@@ -1,0 +1,19 @@
+{
+  "name": "polymer-base-project",
+  "version": "0.0.0",
+  "authors": [
+    "Simon <simonxd@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~1.0.9",
+    "paper-toolbar": "PolymerElements/paper-toolbar#~1.0.4"
+  }
+}
