@@ -1,9 +1,7 @@
 {
-  "name": "polymer-base-project",
+  "name": "base-polymer-project",
   "version": "0.0.0",
-  "authors": [
-    "Simon <simonxd@gmail.com>"
-  ],
+  "authors": [],
   "license": "MIT",
   "ignore": [
     "**/.*",
