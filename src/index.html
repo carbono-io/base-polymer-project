@@ -1,23 +1,86 @@
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="index.css">
+  <head>
+    <link rel="stylesheet" type="text/css" href="index.css">
 
-        <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-        <script>
-            // By default use shadow dom
-            window.Polymer = window.Polymer || {};
-            window.Polymer.dom = 'shadow';
-        </script>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script>
+        // By default use shadow dom
+        window.Polymer = window.Polymer || {};
+        window.Polymer.dom = 'shadow';
+    </script>
 
-        <link rel="import" href="bower_components/polymer/polymer.html">
-        <link rel="import" href="bower_components/iron-icons/iron-icons.html">
-        <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-        <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
-        <link rel="import" href="bower_components/carbo-inspector/carbo-inspector.injector.html">
+    <link rel="import" href="bower_components/polymer/polymer.html">
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/carbo-inspector/carbo-inspector.injector.html">
 
-    </head>
-    <body class="fullbleed layout vertical">
+    <style is="custom-style">
+      body {
+        background-color: var(--paper-grey-50);
+      }
+      #cards {
+        @apply(--layout-vertical);
+        @apply(--center-justified);
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      paper-card {
+
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 90%;
+        margin-bottom: 16px;
+      }
+      .avatar {
+        display: inline-block;
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+        background: var(--paper-pink-500);
+        color: white;
+        line-height: 64px;
+        font-size: 30px;
+        text-align: center;
+      }
+      .fancy .title {
+        position: absolute;
+        top: 30px;
+        left: 100px;
+        color: var(--paper-indigo-500);
+      }
+      .fancy img {
+        width: 100%;
+      }
+      .fancy .big {
+        font-size: 22px;
+        padding: 8px 0 16px;
+        color: var(--google-grey-500);
+      }
+      .fancy .medium {
+        font-size: 16px;
+        padding-bottom: 8px;
+      }
+      .pink {
+        --paper-card-header-color: var(--paper-pink-500);
+      }
+
+      /* let pages have 100% width*/
+      page {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+
+
+  </head>
+  <body class="fullbleed layout vertical">
+    <template id="app" is="dom-bind">
+      <page id="page-1">
         <paper-toolbar>
         </paper-toolbar>
-    </body>
+      </page>
+    </template>
+  </body>
 </html>
