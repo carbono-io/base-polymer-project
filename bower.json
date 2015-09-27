@@ -15,6 +15,6 @@
     "paper-toolbar": "PolymerElements/paper-toolbar#~1.0.4"
   },
   "devDependencies": {
-    "carbo-inspector": "https://github.com/carbono-io/carbo-inspector.git",
+    "carbo-inspector": "https://github.com/carbono-io/carbo-inspector.git"
   }
 }
