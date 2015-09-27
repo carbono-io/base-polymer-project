@@ -15,7 +15,17 @@ gulp.task('serve:src', function () {
     });
 });
 
+gulp.task('watch', function () {
+    gulp.watch([
+        'src/index.css',
+        'src/index.html'
+    ])
+    .on('change', function () {
+        browserSync.reload();
+    });
+});
+
 /**
  * Development environment setup
  */
-gulp.task('develop', ['serve:src']);
+gulp.task('develop', ['serve:src', 'watch']);
