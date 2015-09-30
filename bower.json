@@ -11,6 +11,8 @@
     "tests"
   ],
   "dependencies": {
+    "iron-icon": "PolymerElements/iron-icon#~1.0.5",
+    "iron-icons": "PolymerElements/iron-icons#~1.0.4",
     "paper-toolbar": "PolymerElements/paper-toolbar#~1.0.4",
     "polymer": "1.1.4"
   }
