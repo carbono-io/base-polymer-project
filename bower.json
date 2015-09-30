@@ -12,6 +12,6 @@
   ],
   "dependencies": {
     "paper-toolbar": "PolymerElements/paper-toolbar#~1.0.4",
-    "polymer": "~1.0.9"
+    "polymer": "1.1.4"
   }
 }
