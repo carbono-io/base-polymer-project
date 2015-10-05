@@ -1,8 +1,13 @@
 body {
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     font-family: 'Roboto', 'Noto', sans-serif;
     font-size: 14px;
     margin: 0;
+}
+
+paper-toolbar {
+    background-color: #3f51b5;
+    color: #FFFFFF;
 }
 
 /**
@@ -10,7 +15,7 @@ body {
  * vvvvvvvv
  */
 
-.form-commands {
+carbo-form-control {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
