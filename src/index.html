@@ -3,21 +3,72 @@
         <link rel="stylesheet" type="text/css" href="index.css">
 
         <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        <script src="bower_components/page/page.js"></script>
         <script>
             // By default use shadow dom
             window.Polymer = window.Polymer || {};
             window.Polymer.dom = 'shadow';
-        </script>
 
+            window.addEventListener('WebComponentsReady', function(WebComponentsReadyEvent){
+                
+    
+                function changePage(context , next){
+                    var ironPages = document.querySelector("#iron-pages");
+                    ironPages.select(context.params.page);
+                    next();                    
+                }
+
+                function sendParamsToPage(context){
+                    var app  = document.querySelector("#app");
+                    for(var param in context.params){
+                        app[param] = context.params[param];
+                    }
+                } 
+
+                page.base('/#');
+
+                page('/:page/*', changePage);
+
+                page('/page/:parametro', function(context){ 
+                   sendParamsToPage(context); 
+                });
+
+                page('/user/:leo', function(context){ 
+                   context.params.leo = "Você é " + context.params.leo;
+                   sendParamsToPage(context); 
+                });
+
+                page();
+
+            });
+
+        </script>
+        
         <link rel="import" href="bower_components/polymer/polymer.html">
         <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
         <link rel="import" href="bower_components/iron-icon/iron-icon.html">
+        <link rel="import" href="bower_components/iron-pages/iron-pages.html">
 
         <!-- import the default set of icons -->
         <link rel="import" href="bower_components/iron-icons/iron-icons.html">
     </head>
     <body class="fullbleed layout vertical">
-        <paper-toolbar>
-        </paper-toolbar>
+        <template id="app" is="dom-bind">
+            <paper-toolbar>
+            </paper-toolbar>
+            <iron-pages id="iron-pages" attr-for-selected="page" selected="home">
+                
+                <div page="page" paramentro="dasdasdasd">
+                    <h3>Pages</h3>
+                    <span>{{parametro}}</span>
+                </div>
+
+                <div page="user">
+                    <h3>User</h3>
+                    <span>{{leo}}</span>
+                </div>
+
+            </iron-pages>
+        <template>
     </body>
 </html>
