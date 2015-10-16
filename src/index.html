@@ -26,9 +26,13 @@
                     }
                 } 
 
-                page.base('/#!');
+                page.base('/index.html#');
 
-                page('/:page/*', changePage);
+                page('/:page', changePage);
+
+                page('/:page/:num', function(context){
+                    sendParamsToPage(context);
+                });
 
                 page();
 
@@ -49,7 +53,7 @@
             <paper-toolbar>
             </paper-toolbar>
             <iron-pages id="iron-pages" attr-for-selected="page" selected="teste">
-
+                    <div page="teste" param="num"><h3>teste</h3></div>
             </iron-pages>
         <template>
     </body>
