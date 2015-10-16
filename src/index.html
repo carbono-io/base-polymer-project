@@ -29,15 +29,6 @@
 
                 page('/:page/*', changePage);
 
-                page('/page/:parametro', function(context){ 
-                   sendParamsToPage(context); 
-                });
-
-                page('/user/:leo', function(context){ 
-                   context.params.leo = "Você é " + context.params.leo;
-                   sendParamsToPage(context); 
-                });
-
                 page();
 
             });
@@ -56,17 +47,8 @@
         <template id="app" is="dom-bind">
             <paper-toolbar>
             </paper-toolbar>
-            <iron-pages id="iron-pages" attr-for-selected="page" selected="home">
+            <iron-pages id="iron-pages" attr-for-selected="page" selected="teste">
                 
-                <div page="page" paramentro="dasdasdasd">
-                    <h3>Pages</h3>
-                    <span>{{parametro}}</span>
-                </div>
-
-                <div page="user">
-                    <h3>User</h3>
-                    <span>{{leo}}</span>
-                </div>
 
             </iron-pages>
         <template>
