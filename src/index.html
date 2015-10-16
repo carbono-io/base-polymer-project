@@ -15,6 +15,7 @@
                 function changePage(context , next){
                     var ironPages = document.querySelector("#iron-pages");
                     ironPages.select(context.params.page);
+                    console.info("pagejs redirect to %s" , context.params.page);
                     next();                    
                 }
 
@@ -25,7 +26,7 @@
                     }
                 } 
 
-                page.base('/#');
+                page.base('/#!');
 
                 page('/:page/*', changePage);
 
@@ -48,7 +49,6 @@
             <paper-toolbar>
             </paper-toolbar>
             <iron-pages id="iron-pages" attr-for-selected="page" selected="teste">
-                
 
             </iron-pages>
         <template>
