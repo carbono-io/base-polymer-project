@@ -18,6 +18,8 @@
                         app       = document.querySelector("#app");
 
                     ironPages.select(page);
+                    ironPages.selected = pages;
+
 
                      var paramAttr = "";
                      ironPages.items.forEach(function(item){
@@ -56,9 +58,8 @@
         <template id="app" is="dom-bind">
             <paper-toolbar>
             </paper-toolbar>
-            <iron-pages id="iron-pages" attr-for-selected="page" selected="teste">
-                <div page="teste" param="num"><h3>teste</h3> <span>{{num}}</span> </div>
-                <div page="user" param="id"><h3>teste</h3> <span>{{id}}</span> </div>
+            <iron-pages id="iron-pages" attr-for-selected="page" selected="home">
+                <div page="teste" param="num"><h3>HOME</h3></div>
             </iron-pages>
         <template>
     </body>
