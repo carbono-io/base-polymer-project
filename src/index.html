@@ -18,7 +18,15 @@
                         app       = document.querySelector("#app");
 
                     ironPages.select(page);
-                    app[ironPages.selectedItem.attributes.param.value] = param;
+
+                     var paramAttr = "";
+                     ironPages.items.forEach(function(item){
+                        if(ironPages.items[item].attributes.page = page)
+                            paramAttr = ironPages.items[item].attributes.param;
+                     })
+
+                    app[paramAttr] = param;
+
                     console.info("pagejs redirect to %s" , page);
                    
                 }
