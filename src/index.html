@@ -3,7 +3,7 @@
         <link rel="stylesheet" type="text/css" href="index.css">
 
         <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-        <script src="bower_components/page/page.js"></script>
+        <script src="bower_components/director/build/director.js"></script>
         <script>
             // By default use shadow dom
             window.Polymer = window.Polymer || {};
@@ -11,30 +11,26 @@
 
             window.addEventListener('WebComponentsReady', function(WebComponentsReadyEvent){
                 
-    
-                function changePage(context , next){
-                    var ironPages = document.querySelector("#iron-pages");
-                    ironPages.select(context.params.page);
-                    console.info("pagejs redirect to %s" , context.params.page);
-                    next();                    
+
+                var redirect = function (page , param){
+                    
+                    var ironPages = document.querySelector("#iron-pages"),
+                        app       = document.querySelector("#app");
+
+                    ironPages.select(page);
+                    app[ironPages.selectedItem.attributes.param.value] = param;
+                    console.info("pagejs redirect to %s" , page);
+                   
                 }
 
-                function sendParamsToPage(context){
-                    var app  = document.querySelector("#app");
-                    for(var param in context.params){
-                        app[param] = context.params[param];
-                    }
-                } 
+                var routes = {
+                    '/*': redirect,
+                    '/*/:params': redirect,
+                };
 
-                page.base('/resources/marked/index.html#');
+                var router = Router(routes);
 
-                page('/:page', changePage);
-
-                page('/:page/:num', function(context){
-                    sendParamsToPage(context);
-                });
-
-                page();
+                router.init();
 
             });
 
@@ -53,7 +49,8 @@
             <paper-toolbar>
             </paper-toolbar>
             <iron-pages id="iron-pages" attr-for-selected="page" selected="teste">
-                    <div page="teste" param="num"><h3>teste</h3></div>
+                <div page="teste" param="num"><h3>teste</h3> <span>{{num}}</span> </div>
+                <div page="user" param="id"><h3>teste</h3> <span>{{id}}</span> </div>
             </iron-pages>
         <template>
     </body>

@@ -16,6 +16,6 @@
     "paper-toolbar": "PolymerElements/paper-toolbar#~1.0.4",
     "polymer": "1.1.4",
     "iron-pages": "PolymerElements/iron-pages#~1.0.3",
-    "page": "visionmedia/page.js#~1.6.4"
+    "director": "~1.2.8"
   }
 }
