@@ -22,7 +22,7 @@
                      var paramAttr = "";
                      ironPages.items.forEach(function(item){
                         if(item.attributes.page = page)
-                            paramAttr = ironPages.items[item].attributes.param;
+                            paramAttr = item.attributes.param;
                      })
 
                     app[paramAttr] = param;
