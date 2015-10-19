@@ -20,13 +20,10 @@
                     ironPages.select(page);
                     ironPages.selected = page;
 
-                     var paramAttr = "";
-                     ironPages.items.forEach(function(item){
-                        if(item.attributes.page = page)
-                            paramAttr = item.attributes.param;
-                     })
+                    var ironPage = ironPages.querySelector("[page='"+page+"']");
 
-                    app[paramAttr] = param;
+                    app['page'] = page;
+                    app[ironPage.attributes.param.value] = param;
 
                     console.info("pagejs redirect to %s" , page);
                    
