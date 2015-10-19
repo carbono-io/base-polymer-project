@@ -61,5 +61,11 @@
                 <div page="home" param="num"><h3>HOME</h3></div>
             </iron-pages>
         </template>
+        <script type="text/javascript">
+            var app = document.querySelector('#app');
+            app.addEventListener('dom-change', function () {
+                console.log('dom-changed');
+            });
+        </script>
     </body>
 </html>
