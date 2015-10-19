@@ -20,7 +20,7 @@
                     ironPages.select(page);
                     ironPages.selected = page;
 
-                    var ironPage = ironPages.querySelector("[page='"+page+"']");
+                    var ironPage = ironPages.querySelector("[page='"+((page) ? page : 'home' )+"']");
 
                     app['page'] = page;
                     app[ironPage.attributes.param.value] = param;
