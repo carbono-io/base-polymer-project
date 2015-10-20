@@ -22,6 +22,7 @@
 
                     var ironPage = ironPages.querySelector("[page='"+((page !== "undefined") ? page : 'home' )+"']");
 
+                    app['page'] = page;
                     app['pageTitle'] = page;
                     app[ironPage.attributes.param.value] = param;
 
