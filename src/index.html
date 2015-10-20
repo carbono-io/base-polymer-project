@@ -23,11 +23,11 @@
                     var ironPage = ironPages.querySelector("[page='"+((page !== "undefined") ? page : 'home' )+"']");
 
                     app['page'] = page;
-                    app['pageTitle'] = ironPage.attributes.title.value;
+                    app['pageTitle'] = ironPage.attributes["page-title"].value;
                     app[ironPage.attributes.param.value] = param;
 
                     console.info("pagejs redirect to %s" , page);
-                   
+
                 }
 
                 var routes = {
@@ -56,7 +56,7 @@
             <paper-toolbar>
             </paper-toolbar>
             <iron-pages id="iron-pages" attr-for-selected="page" selected="home" >
-                <page page="home" param="num" title="Home Page"></page>
+                <page page="home" param="num" page-title="Home Page"></page>
             </iron-pages>
         <template>
     </body>
