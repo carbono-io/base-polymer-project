@@ -8,6 +8,13 @@ body {
   margin-bottom: 0px;
 }
 
+page {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
 paper-toolbar {
   background-color: #3f51b5;
   color: #FFFFFF;
